@@ -1,0 +1,806 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{95D42034-873D-4D9E-8CC5-1B7A41E3554A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BilliardWindowsApplication</RootNamespace>
+    <AssemblyName>BilliardWindowsApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bdll.cs" />
+    <Compile Include="BLL_BilliardWindowsApplication.cs" />
+    <Compile Include="ExtendedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminDashboard.designer.cs">
+      <DependentUpon>frmAdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmbilliarno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmbilliarno.designer.cs">
+      <DependentUpon>frmbilliarno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalibrationSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalibrationSave.Designer.cs">
+      <DependentUpon>frmCalibrationSave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCameraCalibration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCameraCalibration.Designer.cs">
+      <DependentUpon>frmCameraCalibration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmclose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmclose.designer.cs">
+      <DependentUpon>frmclose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClubWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClubWelcome.Designer.cs">
+      <DependentUpon>frmClubWelcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCostSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCostSetup.designer.cs">
+      <DependentUpon>frmCostSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDashboard.designer.cs">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGameScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGameScore.Designer.cs">
+      <DependentUpon>frmGameScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGameScore3NEW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGameScore3NEW.Designer.cs">
+      <DependentUpon>frmGameScore3NEW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGameScore3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGameScore3.Designer.cs">
+      <DependentUpon>frmGameScore3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGameSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGameSetup.Designer.cs">
+      <DependentUpon>FrmGameSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMemoryDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMemoryDetails.Designer.cs">
+      <DependentUpon>frmMemoryDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClubLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClubLogin.Designer.cs">
+      <DependentUpon>frmClubLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMessageBox.Designer.cs">
+      <DependentUpon>FrmMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStart.Designer.cs">
+      <DependentUpon>frmStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTeaching.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTeaching.Designer.cs">
+      <DependentUpon>FrmTeaching.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmwiner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmwiner.Designer.cs">
+      <DependentUpon>frmwiner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nbprogressbar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="nbprogressbar.Designer.cs">
+      <DependentUpon>nbprogressbar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nbutton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="nbutton.Designer.cs">
+      <DependentUpon>nbutton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pictureboxRound.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="ShotHistory.cs" />
+    <Compile Include="ShotMetaInfo.cs" />
+    <Compile Include="Web References\biliardService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SOAPService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminDashboard.resx">
+      <DependentUpon>frmAdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmbilliarno.resx">
+      <DependentUpon>frmbilliarno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalibrationSave.resx">
+      <DependentUpon>frmCalibrationSave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCameraCalibration.resx">
+      <DependentUpon>frmCameraCalibration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmclose.resx">
+      <DependentUpon>frmclose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClubWelcome.resx">
+      <DependentUpon>frmClubWelcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCostSetup.resx">
+      <DependentUpon>frmCostSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDashboard.resx">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGameScore.resx">
+      <DependentUpon>frmGameScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGameScore3NEW.resx">
+      <DependentUpon>frmGameScore3NEW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGameScore3.resx">
+      <DependentUpon>frmGameScore3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGameSetup.resx">
+      <DependentUpon>FrmGameSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMemoryDetails.resx">
+      <DependentUpon>frmMemoryDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClubLogin.resx">
+      <DependentUpon>frmClubLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMessageBox.resx">
+      <DependentUpon>FrmMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStart.resx">
+      <DependentUpon>frmStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTeaching.resx">
+      <DependentUpon>FrmTeaching.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmwiner.resx">
+      <DependentUpon>frmwiner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nbprogressbar.resx">
+      <DependentUpon>nbprogressbar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\biliardService\advertisement.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\biliardService\AdvUser.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\biliardService\BilliardScoreboard.wsdl" />
+    <None Include="Web References\biliardService\clubDetails.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\biliardService\costDetails.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\biliardService\Details.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\biliardService\gamecostdetails.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\biliardService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\biliardService\ScoreData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\biliardService\ScorePlayerData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\biliardService\Shot.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SOAPService\advertisement.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SOAPService\AdvUser.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SOAPService\BilliardScoreboard.wsdl" />
+    <None Include="Web References\SOAPService\clubDetails.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SOAPService\costDetails.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SOAPService\Details.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SOAPService\gamecostdetails.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SOAPService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SOAPService\ScoreData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SOAPService\ScorePlayerData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SOAPService\Shot.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BigLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\et.eBottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginpanel.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo-68945.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Qg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ug.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Og.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Xg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GAg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RSg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fcaB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fcaBv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ga.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fca - v.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoscorenew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BKg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ETg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://score.biliardoprofessionale.it/BilliardScoreboard.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\biliardService\</RelPath>
+      <UpdateFromURL>http://score.biliardoprofessionale.it/BilliardScoreboard.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>BilliardWindowsApplication_biliardService_BilliardScoreboard</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://test.17207.it/BilliardScoreboard.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SOAPService\</RelPath>
+      <UpdateFromURL>http://test.17207.it/BilliardScoreboard.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>BilliardWindowsApplication_SOAPService_BilliardScoreboard</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\biliardService\BilliardScoreboard.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beep-07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_16.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SOAPService\BilliardScoreboard.disco" />
+    <None Include="Resources\start.JPG" />
+    <None Include="Resources\italian game.JPG" />
+    <None Include="Resources\lab TO.png" />
+    <None Include="Resources\ROG.png" />
+    <None Include="Resources\fcag.png" />
+    <None Include="Resources\fcaBg.png" />
+    <None Include="Resources\-bg.png" />
+    <None Include="Resources\fcaBr.png" />
+    <None Include="Resources\0c.png" />
+    <None Include="Resources\1c.png" />
+    <None Include="Resources\2c.png" />
+    <None Include="Resources\3c.png" />
+    <None Include="Resources\4c.png" />
+    <None Include="Resources\5c.png" />
+    <None Include="Resources\6c.png" />
+    <None Include="Resources\7c.png" />
+    <None Include="Resources\8c.png" />
+    <None Include="Resources\9c.png" />
+    <None Include="Resources\-c.png" />
+    <None Include="Resources\Cc.png" />
+    <None Include="Resources\Ec.png" />
+    <None Include="Resources\fcc - v.png" />
+    <None Include="Resources\Gc.png" />
+    <None Include="Resources\Hc.png" />
+    <None Include="Resources\Mc.png" />
+    <None Include="Resources\Rc.png" />
+    <None Include="Resources\Sc.png" />
+    <None Include="Resources\fcar.png" />
+    <None Include="Resources\fcc.png" />
+    <None Include="Resources\fca.png" />
+    <None Include="Resources\fcar1.png" />
+    <None Include="Resources\Ma1.png" />
+    <None Include="Resources\Mg1.png" />
+    <None Include="Resources\Mb1.png" />
+    <None Include="Resources\-b1.png" />
+    <None Include="Resources\-a1.png" />
+    <None Include="Resources\Ca1.png" />
+    <None Include="Resources\Cb1.png" />
+    <None Include="Resources\Eb1.png" />
+    <None Include="Resources\Ea1.png" />
+    <None Include="Resources\fcaB1.png" />
+    <None Include="Resources\fca1.png" />
+    <None Include="Resources\fcaBv1.png" />
+    <None Include="Resources\fca - v1.png" />
+    <None Include="Resources\Ha1.png" />
+    <None Include="Resources\Hb1.png" />
+    <None Include="Resources\Gb1.png" />
+    <None Include="Resources\Ga1.png" />
+    <None Include="Resources\parity.png" />
+    <None Include="Resources\Swap.JPG" />
+    <None Include="Resources\swapposition.png" />
+    <None Include="Resources\biil.JPG" />
+    <None Include="Resources\btexit.JPG" />
+    <None Include="Resources\btstart.JPG" />
+    <None Include="Resources\btnstop.JPG" />
+    <None Include="Resources\setup.png" />
+    <None Include="Resources\off.png" />
+    <None Include="Resources\3 acc.png" />
+    <None Include="Resources\1btu.png" />
+    <None Include="Resources\not cal.png" />
+    <None Include="Resources\back.png" />
+    <None Include="Resources\R - trk - W.png" />
+    <None Include="Resources\R - trk  - O.png" />
+    <None Include="Resources\biil1.JPG" />
+    <None Include="Resources\billplay.png" />
+    <Content Include="icon.ico" />
+    <None Include="Resources\WB.png" />
+    <None Include="Resources\1acc.png" />
+    <None Include="Resources\billiardno.JPG" />
+    <None Include="Resources\checkball.png" />
+    <None Include="Resources\RY_r.png" />
+    <None Include="Resources\RW_r.png" />
+    <None Include="Resources\circle.png" />
+    <None Include="Resources\green_circle.png" />
+    <None Include="Resources\green_circle_boundary.png" />
+    <None Include="Resources\red_circle.png" />
+    <None Include="Resources\red_circle_boundary.png" />
+    <None Include="Resources\white_green_circle.png" />
+    <None Include="Resources\white_red_circle.png" />
+    <None Include="Resources\cancel_button.png" />
+    <None Include="Resources\cancel_disabled_button.png" />
+    <None Include="Resources\exit_button.png" />
+    <None Include="Resources\replay_button.png" />
+    <None Include="Resources\replay_disabled_button.png" />
+    <None Include="Resources\reset_button.png" />
+    <None Include="Resources\reset_disabled_button.png" />
+    <None Include="Resources\save_button.png" />
+    <None Include="Resources\save_disabled_button.png" />
+    <None Include="Resources\start_button.png" />
+    <None Include="Resources\start_disabled_button.png" />
+    <None Include="Resources\ask_save.png" />
+    <None Include="Resources\no_button.png" />
+    <None Include="Resources\ok_button.png" />
+    <None Include="Resources\setup_complete.png" />
+    <None Include="Resources\yes_button.png" />
+    <None Include="Resources\wrong_shot_red.png" />
+    <None Include="Resources\ask_cancel_shot.png" />
+    <None Include="Resources\equal_name.png" />
+    <None Include="Resources\download.jpg" />
+    <None Include="Resources\download %281%29.jpg" />
+    <None Include="Resources\1set.png" />
+    <None Include="Resources\1dash.png" />
+    <None Include="Resources\rbtunselected.JPG" />
+    <None Include="Resources\rbtselected1.JPG" />
+    <Content Include="ResultEmail.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

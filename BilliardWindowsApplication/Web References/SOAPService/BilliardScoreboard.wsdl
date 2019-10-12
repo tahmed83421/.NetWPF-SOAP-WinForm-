@@ -1,0 +1,2296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="https://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://tempuri.org/">
+      <s:element name="GetClubName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefixText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClubNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClubNameResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefixText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefixText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckPasswordResult" type="tns:ArrayOfDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Details" nillable="true" type="tns:Details" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Details">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PlayerId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClubId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FamilyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayerPicture" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClubName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClubPicture" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getPlayerDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="playerName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPlayerDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPlayerDetailsResult" type="tns:Details" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPlayerDetailsOnStream">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MatchIDD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Player1Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Player2Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Player3Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Player4Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Club1Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Club2Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Club3Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Club4Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imgPlayer1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imgPlayer2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imgPlayer3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imgPlayer4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imgClub1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imgClub2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imgClub3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imgClub4" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPlayerDetailsOnStreamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddPlayerDetailsOnStreamResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPlayerDetailsOnStreamTest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MatchIDD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Player1Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Player2Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Player3Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Player4Name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPlayerDetailsOnStreamTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddPlayerDetailsOnStreamTestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlayerLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlayerLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdatePlayerLoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getClubDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getClubDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getClubDetailsResult" type="tns:clubDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clubDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="clubId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClubName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClubLogo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactPerson" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VatNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cell" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getClubPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getClubPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getClubPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sub" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getmailResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getmailwithattach">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sub" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getmailwithattachResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="checkupdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="app" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="version" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkupdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkupdateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="daysCost">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clubid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="billiardno" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nodays" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="daysCostResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="daysCostResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCostDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clubid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bilino" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCostDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCostDetailsResult" type="tns:costDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="costDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="clubid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bilino" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="f1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="h1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="d1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="f2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="h2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="d2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="f3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="h3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="d3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="f4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="t4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="h4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="d4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpecialCharge" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpecialBool" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DownloadExel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="costvisible" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="emailcostPlayer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="emailcostowner" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="coston" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="updatecostdays">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="details" type="tns:costDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updatecostdaysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updatecostdaysResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateCostDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="details" type="tns:costDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateCostDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateCostDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setScoreData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="details" type="tns:ScoreData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ScoreData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="gameid" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="color" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="setdata" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="setid" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="tlavail" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="setScoreDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setScoreDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delScoreData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="details" type="tns:ScoreData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delScoreDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="delScoreDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScoreNationName">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetScoreNationNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScoreNationNameResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScoreCityName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="givennation" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScoreCityNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScoreCityNameResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScoreClubName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="givencity" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScoreClubNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScoreClubNameResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScoreFname">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="givenclub" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScoreFnameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScoreFnameResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScoreName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="givenfname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScoreNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScoreNameResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScoreGameListWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="givenemail" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScoreGameListWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScoreGameListWebResult" type="tns:ArrayOfGamecostdetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGamecostdetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="gamecostdetails" nillable="true" type="tns:gamecostdetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="gamecostdetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="clubid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="billno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="p1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="p2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="p3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="p4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="noplayers" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="costplayer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totcost" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fromtime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="duration" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="gameover" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="usbrelay" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetScoreStatistic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gameid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScoreStatisticResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScoreStatisticResult" type="tns:ArrayOfScorePlayerData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfScorePlayerData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ScorePlayerData" nillable="true" type="tns:ScorePlayerData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ScorePlayerData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FamilyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClubId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClubName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClubLogo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayerPicture" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="playerno" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetScoreData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="givengameid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScoreDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScoreDataResult" type="tns:ArrayOfScoreData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfScoreData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ScoreData" nillable="true" type="tns:ScoreData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Updategamecost">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="details" type="tns:gamecostdetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdategamecostResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdategamecostResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deletelastgamecostiffree">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="details" type="tns:gamecostdetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deletelastgamecostiffreeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deletelastgamecostiffreeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertgamecost">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="details" type="tns:gamecostdetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertgamecostResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insertgamecostResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checklastgamecost">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="details" type="tns:gamecostdetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checklastgamecostResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checklastgamecostResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkusbrelay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkusbrelayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkusbrelayResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listOfopenBilliard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClubId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listOfopenBilliardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listOfopenBilliardResult" type="tns:ArrayOfGamecostdetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Updategamecoststatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdategamecoststatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdategamecoststatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Updategameusbrelay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usbrelay" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdategameusbrelayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdategameusbrelayResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddShotDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ShotInfo" type="tns:Shot" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Shot">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ShotId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlayerId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShotName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="InSide" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutSide" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShotDimensions" type="tns:ArrayOfShotDimensions" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfShotDimensions">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ShotDimensions" nillable="true" type="tns:ShotDimensions" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ShotDimensions">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ShotDimensionId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShotId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="X1" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="Y1" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="X2" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="Y2" type="s:float" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddShotDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddShotDetailResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShotDetailByShotId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ShotId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShotDetailByShotIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShotDetailByShotIdResult" type="tns:Shot" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShotListByPlayerId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PlayerId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShotListByPlayerIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShotListByPlayerIdResult" type="tns:ArrayOfShot" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfShot">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Shot" nillable="true" type="tns:Shot" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveAdvertisement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:advertisement" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="advertisement">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AdvertisementId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Text" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Color" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Discount" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="Img" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsTempStorage" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="advEmail" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveAdvertisementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveAdvertisementResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendEmailNotification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:Email" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Email">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="From" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="To" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendEmailNotificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendEmailNotificationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignUpAdvertiser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:AdvUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AdvUser">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Company" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Website" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Vat" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailForSale" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAdmin" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalPublication" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalVisitors" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalDiscount" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SignUpAdvertiserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SignUpAdvertiserResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddViewHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="data" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddViewHistoryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getip">
+        <s:complexType />
+      </s:element>
+      <s:element name="getipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getipResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignIn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:AdvUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignInResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SignInResult" type="tns:AdvUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStestics">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:AdvUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStesticsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStesticsResult" type="tns:AdvUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveDiscountRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:Discount" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Discount">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdvertisementId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdvEmail" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveDiscountRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveDiscountRequestResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForgotPw">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:AdvUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForgotPwResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ForgotPwResult" type="tns:AdvUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRendomeImg">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRendomeImgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRendomeImgResult" type="tns:advertisement" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAdByIda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAdByIdaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAdByIdaResult" type="tns:advertisement" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateLog">
+        <s:complexType />
+      </s:element>
+      <s:element name="GenerateLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenerateLogResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetClubNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClubName" />
+  </wsdl:message>
+  <wsdl:message name="GetClubNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClubNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPassword" />
+  </wsdl:message>
+  <wsdl:message name="GetPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPassword" />
+  </wsdl:message>
+  <wsdl:message name="CheckPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPlayerDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:getPlayerDetails" />
+  </wsdl:message>
+  <wsdl:message name="getPlayerDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:getPlayerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPlayerDetailsOnStreamSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPlayerDetailsOnStream" />
+  </wsdl:message>
+  <wsdl:message name="AddPlayerDetailsOnStreamSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPlayerDetailsOnStreamResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPlayerDetailsOnStreamTestSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPlayerDetailsOnStreamTest" />
+  </wsdl:message>
+  <wsdl:message name="AddPlayerDetailsOnStreamTestSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPlayerDetailsOnStreamTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerLogin" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="getClubDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:getClubDetails" />
+  </wsdl:message>
+  <wsdl:message name="getClubDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:getClubDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getClubPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:getClubPassword" />
+  </wsdl:message>
+  <wsdl:message name="getClubPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:getClubPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="getmailSoapIn">
+    <wsdl:part name="parameters" element="tns:getmail" />
+  </wsdl:message>
+  <wsdl:message name="getmailSoapOut">
+    <wsdl:part name="parameters" element="tns:getmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="getmailwithattachSoapIn">
+    <wsdl:part name="parameters" element="tns:getmailwithattach" />
+  </wsdl:message>
+  <wsdl:message name="getmailwithattachSoapOut">
+    <wsdl:part name="parameters" element="tns:getmailwithattachResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkupdateSoapIn">
+    <wsdl:part name="parameters" element="tns:checkupdate" />
+  </wsdl:message>
+  <wsdl:message name="checkupdateSoapOut">
+    <wsdl:part name="parameters" element="tns:checkupdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="daysCostSoapIn">
+    <wsdl:part name="parameters" element="tns:daysCost" />
+  </wsdl:message>
+  <wsdl:message name="daysCostSoapOut">
+    <wsdl:part name="parameters" element="tns:daysCostResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCostDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:getCostDetails" />
+  </wsdl:message>
+  <wsdl:message name="getCostDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:getCostDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="updatecostdaysSoapIn">
+    <wsdl:part name="parameters" element="tns:updatecostdays" />
+  </wsdl:message>
+  <wsdl:message name="updatecostdaysSoapOut">
+    <wsdl:part name="parameters" element="tns:updatecostdaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateCostDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:updateCostDetails" />
+  </wsdl:message>
+  <wsdl:message name="updateCostDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:updateCostDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="setScoreDataSoapIn">
+    <wsdl:part name="parameters" element="tns:setScoreData" />
+  </wsdl:message>
+  <wsdl:message name="setScoreDataSoapOut">
+    <wsdl:part name="parameters" element="tns:setScoreDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="delScoreDataSoapIn">
+    <wsdl:part name="parameters" element="tns:delScoreData" />
+  </wsdl:message>
+  <wsdl:message name="delScoreDataSoapOut">
+    <wsdl:part name="parameters" element="tns:delScoreDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScoreNationNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScoreNationName" />
+  </wsdl:message>
+  <wsdl:message name="GetScoreNationNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScoreNationNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScoreCityNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScoreCityName" />
+  </wsdl:message>
+  <wsdl:message name="GetScoreCityNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScoreCityNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScoreClubNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScoreClubName" />
+  </wsdl:message>
+  <wsdl:message name="GetScoreClubNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScoreClubNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScoreFnameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScoreFname" />
+  </wsdl:message>
+  <wsdl:message name="GetScoreFnameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScoreFnameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScoreNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScoreName" />
+  </wsdl:message>
+  <wsdl:message name="GetScoreNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScoreNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScoreGameListWebSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScoreGameListWeb" />
+  </wsdl:message>
+  <wsdl:message name="GetScoreGameListWebSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScoreGameListWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScoreStatisticSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScoreStatistic" />
+  </wsdl:message>
+  <wsdl:message name="GetScoreStatisticSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScoreStatisticResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScoreDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScoreData" />
+  </wsdl:message>
+  <wsdl:message name="GetScoreDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScoreDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdategamecostSoapIn">
+    <wsdl:part name="parameters" element="tns:Updategamecost" />
+  </wsdl:message>
+  <wsdl:message name="UpdategamecostSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdategamecostResponse" />
+  </wsdl:message>
+  <wsdl:message name="deletelastgamecostiffreeSoapIn">
+    <wsdl:part name="parameters" element="tns:deletelastgamecostiffree" />
+  </wsdl:message>
+  <wsdl:message name="deletelastgamecostiffreeSoapOut">
+    <wsdl:part name="parameters" element="tns:deletelastgamecostiffreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertgamecostSoapIn">
+    <wsdl:part name="parameters" element="tns:insertgamecost" />
+  </wsdl:message>
+  <wsdl:message name="insertgamecostSoapOut">
+    <wsdl:part name="parameters" element="tns:insertgamecostResponse" />
+  </wsdl:message>
+  <wsdl:message name="checklastgamecostSoapIn">
+    <wsdl:part name="parameters" element="tns:checklastgamecost" />
+  </wsdl:message>
+  <wsdl:message name="checklastgamecostSoapOut">
+    <wsdl:part name="parameters" element="tns:checklastgamecostResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkusbrelaySoapIn">
+    <wsdl:part name="parameters" element="tns:checkusbrelay" />
+  </wsdl:message>
+  <wsdl:message name="checkusbrelaySoapOut">
+    <wsdl:part name="parameters" element="tns:checkusbrelayResponse" />
+  </wsdl:message>
+  <wsdl:message name="listOfopenBilliardSoapIn">
+    <wsdl:part name="parameters" element="tns:listOfopenBilliard" />
+  </wsdl:message>
+  <wsdl:message name="listOfopenBilliardSoapOut">
+    <wsdl:part name="parameters" element="tns:listOfopenBilliardResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdategamecoststatusSoapIn">
+    <wsdl:part name="parameters" element="tns:Updategamecoststatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdategamecoststatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdategamecoststatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdategameusbrelaySoapIn">
+    <wsdl:part name="parameters" element="tns:Updategameusbrelay" />
+  </wsdl:message>
+  <wsdl:message name="UpdategameusbrelaySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdategameusbrelayResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddShotDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:AddShotDetail" />
+  </wsdl:message>
+  <wsdl:message name="AddShotDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:AddShotDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShotDetailByShotIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShotDetailByShotId" />
+  </wsdl:message>
+  <wsdl:message name="GetShotDetailByShotIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShotDetailByShotIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShotListByPlayerIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShotListByPlayerId" />
+  </wsdl:message>
+  <wsdl:message name="GetShotListByPlayerIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShotListByPlayerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveAdvertisementSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveAdvertisement" />
+  </wsdl:message>
+  <wsdl:message name="SaveAdvertisementSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveAdvertisementResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailNotificationSoapIn">
+    <wsdl:part name="parameters" element="tns:SendEmailNotification" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailNotificationSoapOut">
+    <wsdl:part name="parameters" element="tns:SendEmailNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SignUpAdvertiserSoapIn">
+    <wsdl:part name="parameters" element="tns:SignUpAdvertiser" />
+  </wsdl:message>
+  <wsdl:message name="SignUpAdvertiserSoapOut">
+    <wsdl:part name="parameters" element="tns:SignUpAdvertiserResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddViewHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:AddViewHistory" />
+  </wsdl:message>
+  <wsdl:message name="AddViewHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:AddViewHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="getipSoapIn">
+    <wsdl:part name="parameters" element="tns:getip" />
+  </wsdl:message>
+  <wsdl:message name="getipSoapOut">
+    <wsdl:part name="parameters" element="tns:getipResponse" />
+  </wsdl:message>
+  <wsdl:message name="SignInSoapIn">
+    <wsdl:part name="parameters" element="tns:SignIn" />
+  </wsdl:message>
+  <wsdl:message name="SignInSoapOut">
+    <wsdl:part name="parameters" element="tns:SignInResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStesticsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStestics" />
+  </wsdl:message>
+  <wsdl:message name="GetStesticsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStesticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveDiscountRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveDiscountRequest" />
+  </wsdl:message>
+  <wsdl:message name="SaveDiscountRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveDiscountRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForgotPwSoapIn">
+    <wsdl:part name="parameters" element="tns:ForgotPw" />
+  </wsdl:message>
+  <wsdl:message name="ForgotPwSoapOut">
+    <wsdl:part name="parameters" element="tns:ForgotPwResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRendomeImgSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRendomeImg" />
+  </wsdl:message>
+  <wsdl:message name="GetRendomeImgSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRendomeImgResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAdByIdaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAdByIda" />
+  </wsdl:message>
+  <wsdl:message name="GetAdByIdaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAdByIdaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerateLogSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerateLog" />
+  </wsdl:message>
+  <wsdl:message name="GenerateLogSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerateLogResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BilliardScoreboardSoap">
+    <wsdl:operation name="GetClubName">
+      <wsdl:input message="tns:GetClubNameSoapIn" />
+      <wsdl:output message="tns:GetClubNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPassword">
+      <wsdl:input message="tns:GetPasswordSoapIn" />
+      <wsdl:output message="tns:GetPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPassword">
+      <wsdl:input message="tns:CheckPasswordSoapIn" />
+      <wsdl:output message="tns:CheckPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPlayerDetails">
+      <wsdl:input message="tns:getPlayerDetailsSoapIn" />
+      <wsdl:output message="tns:getPlayerDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPlayerDetailsOnStream">
+      <wsdl:input message="tns:AddPlayerDetailsOnStreamSoapIn" />
+      <wsdl:output message="tns:AddPlayerDetailsOnStreamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPlayerDetailsOnStreamTest">
+      <wsdl:input message="tns:AddPlayerDetailsOnStreamTestSoapIn" />
+      <wsdl:output message="tns:AddPlayerDetailsOnStreamTestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerLogin">
+      <wsdl:input message="tns:UpdatePlayerLoginSoapIn" />
+      <wsdl:output message="tns:UpdatePlayerLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClubDetails">
+      <wsdl:input message="tns:getClubDetailsSoapIn" />
+      <wsdl:output message="tns:getClubDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClubPassword">
+      <wsdl:input message="tns:getClubPasswordSoapIn" />
+      <wsdl:output message="tns:getClubPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getmail">
+      <wsdl:input message="tns:getmailSoapIn" />
+      <wsdl:output message="tns:getmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getmailwithattach">
+      <wsdl:input message="tns:getmailwithattachSoapIn" />
+      <wsdl:output message="tns:getmailwithattachSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkupdate">
+      <wsdl:input message="tns:checkupdateSoapIn" />
+      <wsdl:output message="tns:checkupdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="daysCost">
+      <wsdl:input message="tns:daysCostSoapIn" />
+      <wsdl:output message="tns:daysCostSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCostDetails">
+      <wsdl:input message="tns:getCostDetailsSoapIn" />
+      <wsdl:output message="tns:getCostDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updatecostdays">
+      <wsdl:input message="tns:updatecostdaysSoapIn" />
+      <wsdl:output message="tns:updatecostdaysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateCostDetails">
+      <wsdl:input message="tns:updateCostDetailsSoapIn" />
+      <wsdl:output message="tns:updateCostDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setScoreData">
+      <wsdl:input message="tns:setScoreDataSoapIn" />
+      <wsdl:output message="tns:setScoreDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delScoreData">
+      <wsdl:input message="tns:delScoreDataSoapIn" />
+      <wsdl:output message="tns:delScoreDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreNationName">
+      <wsdl:input message="tns:GetScoreNationNameSoapIn" />
+      <wsdl:output message="tns:GetScoreNationNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreCityName">
+      <wsdl:input message="tns:GetScoreCityNameSoapIn" />
+      <wsdl:output message="tns:GetScoreCityNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreClubName">
+      <wsdl:input message="tns:GetScoreClubNameSoapIn" />
+      <wsdl:output message="tns:GetScoreClubNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreFname">
+      <wsdl:input message="tns:GetScoreFnameSoapIn" />
+      <wsdl:output message="tns:GetScoreFnameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreName">
+      <wsdl:input message="tns:GetScoreNameSoapIn" />
+      <wsdl:output message="tns:GetScoreNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreGameListWeb">
+      <wsdl:input message="tns:GetScoreGameListWebSoapIn" />
+      <wsdl:output message="tns:GetScoreGameListWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreStatistic">
+      <wsdl:input message="tns:GetScoreStatisticSoapIn" />
+      <wsdl:output message="tns:GetScoreStatisticSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreData">
+      <wsdl:input message="tns:GetScoreDataSoapIn" />
+      <wsdl:output message="tns:GetScoreDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Updategamecost">
+      <wsdl:input message="tns:UpdategamecostSoapIn" />
+      <wsdl:output message="tns:UpdategamecostSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deletelastgamecostiffree">
+      <wsdl:input message="tns:deletelastgamecostiffreeSoapIn" />
+      <wsdl:output message="tns:deletelastgamecostiffreeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertgamecost">
+      <wsdl:input message="tns:insertgamecostSoapIn" />
+      <wsdl:output message="tns:insertgamecostSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checklastgamecost">
+      <wsdl:input message="tns:checklastgamecostSoapIn" />
+      <wsdl:output message="tns:checklastgamecostSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkusbrelay">
+      <wsdl:input message="tns:checkusbrelaySoapIn" />
+      <wsdl:output message="tns:checkusbrelaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listOfopenBilliard">
+      <wsdl:input message="tns:listOfopenBilliardSoapIn" />
+      <wsdl:output message="tns:listOfopenBilliardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Updategamecoststatus">
+      <wsdl:input message="tns:UpdategamecoststatusSoapIn" />
+      <wsdl:output message="tns:UpdategamecoststatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Updategameusbrelay">
+      <wsdl:input message="tns:UpdategameusbrelaySoapIn" />
+      <wsdl:output message="tns:UpdategameusbrelaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddShotDetail">
+      <wsdl:input message="tns:AddShotDetailSoapIn" />
+      <wsdl:output message="tns:AddShotDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShotDetailByShotId">
+      <wsdl:input message="tns:GetShotDetailByShotIdSoapIn" />
+      <wsdl:output message="tns:GetShotDetailByShotIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShotListByPlayerId">
+      <wsdl:input message="tns:GetShotListByPlayerIdSoapIn" />
+      <wsdl:output message="tns:GetShotListByPlayerIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAdvertisement">
+      <wsdl:input message="tns:SaveAdvertisementSoapIn" />
+      <wsdl:output message="tns:SaveAdvertisementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailNotification">
+      <wsdl:input message="tns:SendEmailNotificationSoapIn" />
+      <wsdl:output message="tns:SendEmailNotificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SignUpAdvertiser">
+      <wsdl:input message="tns:SignUpAdvertiserSoapIn" />
+      <wsdl:output message="tns:SignUpAdvertiserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddViewHistory">
+      <wsdl:input message="tns:AddViewHistorySoapIn" />
+      <wsdl:output message="tns:AddViewHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getip">
+      <wsdl:input message="tns:getipSoapIn" />
+      <wsdl:output message="tns:getipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SignIn">
+      <wsdl:input message="tns:SignInSoapIn" />
+      <wsdl:output message="tns:SignInSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStestics">
+      <wsdl:input message="tns:GetStesticsSoapIn" />
+      <wsdl:output message="tns:GetStesticsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDiscountRequest">
+      <wsdl:input message="tns:SaveDiscountRequestSoapIn" />
+      <wsdl:output message="tns:SaveDiscountRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ForgotPw">
+      <wsdl:input message="tns:ForgotPwSoapIn" />
+      <wsdl:output message="tns:ForgotPwSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRendomeImg">
+      <wsdl:input message="tns:GetRendomeImgSoapIn" />
+      <wsdl:output message="tns:GetRendomeImgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdByIda">
+      <wsdl:input message="tns:GetAdByIdaSoapIn" />
+      <wsdl:output message="tns:GetAdByIdaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateLog">
+      <wsdl:input message="tns:GenerateLogSoapIn" />
+      <wsdl:output message="tns:GenerateLogSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BilliardScoreboardSoap" type="tns:BilliardScoreboardSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetClubName">
+      <soap:operation soapAction="https://tempuri.org/GetClubName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPassword">
+      <soap:operation soapAction="https://tempuri.org/GetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPassword">
+      <soap:operation soapAction="https://tempuri.org/CheckPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPlayerDetails">
+      <soap:operation soapAction="https://tempuri.org/getPlayerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPlayerDetailsOnStream">
+      <soap:operation soapAction="https://tempuri.org/AddPlayerDetailsOnStream" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPlayerDetailsOnStreamTest">
+      <soap:operation soapAction="https://tempuri.org/AddPlayerDetailsOnStreamTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerLogin">
+      <soap:operation soapAction="https://tempuri.org/UpdatePlayerLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClubDetails">
+      <soap:operation soapAction="https://tempuri.org/getClubDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClubPassword">
+      <soap:operation soapAction="https://tempuri.org/getClubPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getmail">
+      <soap:operation soapAction="https://tempuri.org/getmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getmailwithattach">
+      <soap:operation soapAction="https://tempuri.org/getmailwithattach" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkupdate">
+      <soap:operation soapAction="https://tempuri.org/checkupdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="daysCost">
+      <soap:operation soapAction="https://tempuri.org/daysCost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCostDetails">
+      <soap:operation soapAction="https://tempuri.org/getCostDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatecostdays">
+      <soap:operation soapAction="https://tempuri.org/updatecostdays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCostDetails">
+      <soap:operation soapAction="https://tempuri.org/updateCostDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setScoreData">
+      <soap:operation soapAction="https://tempuri.org/setScoreData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delScoreData">
+      <soap:operation soapAction="https://tempuri.org/delScoreData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreNationName">
+      <soap:operation soapAction="https://tempuri.org/GetScoreNationName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreCityName">
+      <soap:operation soapAction="https://tempuri.org/GetScoreCityName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreClubName">
+      <soap:operation soapAction="https://tempuri.org/GetScoreClubName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreFname">
+      <soap:operation soapAction="https://tempuri.org/GetScoreFname" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreName">
+      <soap:operation soapAction="https://tempuri.org/GetScoreName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreGameListWeb">
+      <soap:operation soapAction="https://tempuri.org/GetScoreGameListWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreStatistic">
+      <soap:operation soapAction="https://tempuri.org/GetScoreStatistic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreData">
+      <soap:operation soapAction="https://tempuri.org/GetScoreData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Updategamecost">
+      <soap:operation soapAction="https://tempuri.org/Updategamecost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletelastgamecostiffree">
+      <soap:operation soapAction="https://tempuri.org/deletelastgamecostiffree" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertgamecost">
+      <soap:operation soapAction="https://tempuri.org/insertgamecost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checklastgamecost">
+      <soap:operation soapAction="https://tempuri.org/checklastgamecost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkusbrelay">
+      <soap:operation soapAction="https://tempuri.org/checkusbrelay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listOfopenBilliard">
+      <soap:operation soapAction="https://tempuri.org/listOfopenBilliard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Updategamecoststatus">
+      <soap:operation soapAction="https://tempuri.org/Updategamecoststatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Updategameusbrelay">
+      <soap:operation soapAction="https://tempuri.org/Updategameusbrelay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShotDetail">
+      <soap:operation soapAction="https://tempuri.org/AddShotDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShotDetailByShotId">
+      <soap:operation soapAction="https://tempuri.org/GetShotDetailByShotId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShotListByPlayerId">
+      <soap:operation soapAction="https://tempuri.org/GetShotListByPlayerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAdvertisement">
+      <soap:operation soapAction="https://tempuri.org/SaveAdvertisement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailNotification">
+      <soap:operation soapAction="https://tempuri.org/SendEmailNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignUpAdvertiser">
+      <soap:operation soapAction="https://tempuri.org/SignUpAdvertiser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddViewHistory">
+      <soap:operation soapAction="https://tempuri.org/AddViewHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getip">
+      <soap:operation soapAction="https://tempuri.org/getip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignIn">
+      <soap:operation soapAction="https://tempuri.org/SignIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStestics">
+      <soap:operation soapAction="https://tempuri.org/GetStestics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDiscountRequest">
+      <soap:operation soapAction="https://tempuri.org/SaveDiscountRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForgotPw">
+      <soap:operation soapAction="https://tempuri.org/ForgotPw" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRendomeImg">
+      <soap:operation soapAction="https://tempuri.org/GetRendomeImg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdByIda">
+      <soap:operation soapAction="https://tempuri.org/GetAdByIda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateLog">
+      <soap:operation soapAction="https://tempuri.org/GenerateLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BilliardScoreboardSoap12" type="tns:BilliardScoreboardSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetClubName">
+      <soap12:operation soapAction="https://tempuri.org/GetClubName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPassword">
+      <soap12:operation soapAction="https://tempuri.org/GetPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPassword">
+      <soap12:operation soapAction="https://tempuri.org/CheckPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPlayerDetails">
+      <soap12:operation soapAction="https://tempuri.org/getPlayerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPlayerDetailsOnStream">
+      <soap12:operation soapAction="https://tempuri.org/AddPlayerDetailsOnStream" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPlayerDetailsOnStreamTest">
+      <soap12:operation soapAction="https://tempuri.org/AddPlayerDetailsOnStreamTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerLogin">
+      <soap12:operation soapAction="https://tempuri.org/UpdatePlayerLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClubDetails">
+      <soap12:operation soapAction="https://tempuri.org/getClubDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClubPassword">
+      <soap12:operation soapAction="https://tempuri.org/getClubPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getmail">
+      <soap12:operation soapAction="https://tempuri.org/getmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getmailwithattach">
+      <soap12:operation soapAction="https://tempuri.org/getmailwithattach" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkupdate">
+      <soap12:operation soapAction="https://tempuri.org/checkupdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="daysCost">
+      <soap12:operation soapAction="https://tempuri.org/daysCost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCostDetails">
+      <soap12:operation soapAction="https://tempuri.org/getCostDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatecostdays">
+      <soap12:operation soapAction="https://tempuri.org/updatecostdays" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCostDetails">
+      <soap12:operation soapAction="https://tempuri.org/updateCostDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setScoreData">
+      <soap12:operation soapAction="https://tempuri.org/setScoreData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delScoreData">
+      <soap12:operation soapAction="https://tempuri.org/delScoreData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreNationName">
+      <soap12:operation soapAction="https://tempuri.org/GetScoreNationName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreCityName">
+      <soap12:operation soapAction="https://tempuri.org/GetScoreCityName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreClubName">
+      <soap12:operation soapAction="https://tempuri.org/GetScoreClubName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreFname">
+      <soap12:operation soapAction="https://tempuri.org/GetScoreFname" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreName">
+      <soap12:operation soapAction="https://tempuri.org/GetScoreName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreGameListWeb">
+      <soap12:operation soapAction="https://tempuri.org/GetScoreGameListWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreStatistic">
+      <soap12:operation soapAction="https://tempuri.org/GetScoreStatistic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreData">
+      <soap12:operation soapAction="https://tempuri.org/GetScoreData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Updategamecost">
+      <soap12:operation soapAction="https://tempuri.org/Updategamecost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletelastgamecostiffree">
+      <soap12:operation soapAction="https://tempuri.org/deletelastgamecostiffree" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertgamecost">
+      <soap12:operation soapAction="https://tempuri.org/insertgamecost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checklastgamecost">
+      <soap12:operation soapAction="https://tempuri.org/checklastgamecost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkusbrelay">
+      <soap12:operation soapAction="https://tempuri.org/checkusbrelay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listOfopenBilliard">
+      <soap12:operation soapAction="https://tempuri.org/listOfopenBilliard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Updategamecoststatus">
+      <soap12:operation soapAction="https://tempuri.org/Updategamecoststatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Updategameusbrelay">
+      <soap12:operation soapAction="https://tempuri.org/Updategameusbrelay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShotDetail">
+      <soap12:operation soapAction="https://tempuri.org/AddShotDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShotDetailByShotId">
+      <soap12:operation soapAction="https://tempuri.org/GetShotDetailByShotId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShotListByPlayerId">
+      <soap12:operation soapAction="https://tempuri.org/GetShotListByPlayerId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAdvertisement">
+      <soap12:operation soapAction="https://tempuri.org/SaveAdvertisement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailNotification">
+      <soap12:operation soapAction="https://tempuri.org/SendEmailNotification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignUpAdvertiser">
+      <soap12:operation soapAction="https://tempuri.org/SignUpAdvertiser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddViewHistory">
+      <soap12:operation soapAction="https://tempuri.org/AddViewHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getip">
+      <soap12:operation soapAction="https://tempuri.org/getip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignIn">
+      <soap12:operation soapAction="https://tempuri.org/SignIn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStestics">
+      <soap12:operation soapAction="https://tempuri.org/GetStestics" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDiscountRequest">
+      <soap12:operation soapAction="https://tempuri.org/SaveDiscountRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForgotPw">
+      <soap12:operation soapAction="https://tempuri.org/ForgotPw" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRendomeImg">
+      <soap12:operation soapAction="https://tempuri.org/GetRendomeImg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdByIda">
+      <soap12:operation soapAction="https://tempuri.org/GetAdByIda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateLog">
+      <soap12:operation soapAction="https://tempuri.org/GenerateLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BilliardScoreboard">
+    <wsdl:port name="BilliardScoreboardSoap" binding="tns:BilliardScoreboardSoap">
+      <soap:address location="http://test.17207.it/BilliardScoreboard.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BilliardScoreboardSoap12" binding="tns:BilliardScoreboardSoap12">
+      <soap12:address location="http://test.17207.it/BilliardScoreboard.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

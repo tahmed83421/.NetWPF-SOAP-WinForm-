@@ -1307,15 +1307,19 @@ namespace BilliardWindowsApplication
         }
         //-----------------------------------------------END GAMESCOREBOARD-------------------------------------------------
         //------------------------------------------------PointCHECK--------------------------------------------------------
+
+        SOAPService.BilliardScoreboard API2 = new SOAPService.BilliardScoreboard();
         private void pbW1_Click(object sender, EventArgs e)
         {
-            //try
-           // {
+
+           
+            try
+            {
                 if (playturn1 == true )
                 {
                     playclicksound();
-                  //  if (!timer3.Enabled)
-                    //{
+                    if (!timer3.Enabled)
+                    {
                         if (rightscore || UpScore)
                         {
                             addm2 = true;
@@ -1335,9 +1339,9 @@ namespace BilliardWindowsApplication
                         btnWC.Image = BilliardWindowsApplication.Properties.Resources.Cb;
                         btnYD.Enabled = false;
                         btnYC.Enabled = true;
-                   // }
-                   // else
-                    //{
+                    }
+                    else
+                    {
                         if (rightscore)
                         {
                             try { Convert.ToInt32(lblYscoreboard.Text); }
@@ -1350,10 +1354,13 @@ namespace BilliardWindowsApplication
                             catch { lblWscoreboard.Text = "0"; }
                             lblWscoreboard.Text = lblWscoreboard.Text + ((PictureBox)sender).Tag;
                         }
-                   // }
+                    }
                 }
-           // }
-          //  catch (Exception ex) { MessageBox.Show("exno tgs14" + ex.ToString()); }
+             }
+             catch (Exception ex) { MessageBox.Show("exno tgs14" + ex.ToString()); }
+
+
+            API2.UpdateScoreDataOnStreamAsync(lblWscoreboard.Text,lblYPoint.Text, lblWTurn.Text, lblWSet.Text, "1");
         }
         private void pbY1_Click(object sender, EventArgs e)
         {

@@ -17,6 +17,7 @@ namespace BilliardWindowsApplication
 {
     public partial class FrmGameSetup : Form
     {
+        int MatchId = 0;
         public FrmGameSetup()
         {
             InitializeComponent();
@@ -185,13 +186,13 @@ namespace BilliardWindowsApplication
 
             // Insert Data for Mathch Stream 
           
-          //  billiardScoreboard.AddPlayerDetailsOnStream("1","Tanvir","Sergio","Sarmad","Faisal","","","","","","","","","","","","");
-
-
+       
             new SoundPlayer(BilliardWindowsApplication.Properties.Resources.button_16).Play();
-              // API2.AddPlayerDetailsOnStreamAsync("18", "Tanvir", "Sergio", "Sarmad", "Faisal", null,null,null,null,null,null,null,null,null,null,null,null);
-            // API2.AddPlayerDetailsOnStreamAsync("'18'", "'Tanvir'", "'Sergio'", "'Sarmad'", "'Faisal'", "''", "''", "''", "''", "''", "''", "''", "''", "''", "''", "''", "''");
-            API2.AddPlayerDetailsOnStreamTestAsync("12459",BLL_BilliardWindowsApplication.player1.Name.ToString(), "Lopa", "Maisha","Raka");
+           
+         
+
+            API2.AddPlayerDetailsOnStreamTestAsync("1111", BLL_BilliardWindowsApplication.player1.Name.ToString(), BLL_BilliardWindowsApplication.player2.Name.ToString(), BLL_BilliardWindowsApplication.player3.Name.ToString(), BLL_BilliardWindowsApplication.player4.Name.ToString(), BLL_BilliardWindowsApplication.player1.ClubName.ToString(), BLL_BilliardWindowsApplication.player2.ClubName.ToString(), BLL_BilliardWindowsApplication.player3.ClubName.ToString(), BLL_BilliardWindowsApplication.player4.ClubName.ToString(),BLL_BilliardWindowsApplication.player1.PlayerPicture.ToString(),BLL_BilliardWindowsApplication.player2.PlayerPicture.ToString(),BLL_BilliardWindowsApplication.player3.PlayerPicture.ToString(),BLL_BilliardWindowsApplication.player4.PlayerPicture.ToString(),BLL_BilliardWindowsApplication.player1.ClubPicture.ToString(),BLL_BilliardWindowsApplication.player2.ClubPicture.ToString(),BLL_BilliardWindowsApplication.player3.ClubPicture.ToString(),BLL_BilliardWindowsApplication.player4.ClubPicture.ToString()) ;
+        
 
 
             if (((PictureBox)sender).Name == "pbGame")

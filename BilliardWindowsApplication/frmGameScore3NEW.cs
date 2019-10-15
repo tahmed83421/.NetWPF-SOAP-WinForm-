@@ -235,6 +235,7 @@ namespace BilliardWindowsApplication
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
+          
             try
             {
                 int t1 = starttime.Minutes;
@@ -1308,6 +1309,9 @@ namespace BilliardWindowsApplication
         //-----------------------------------------------END GAMESCOREBOARD-------------------------------------------------
         //------------------------------------------------PointCHECK--------------------------------------------------------
 
+     
+
+
         SOAPService.BilliardScoreboard API2 = new SOAPService.BilliardScoreboard();
         private void pbW1_Click(object sender, EventArgs e)
         {
@@ -1355,18 +1359,20 @@ namespace BilliardWindowsApplication
                             lblWscoreboard.Text = lblWscoreboard.Text + ((PictureBox)sender).Tag;
                         }
                     }
+                 
+                  
                 }
              }
              catch (Exception ex) { MessageBox.Show("exno tgs14" + ex.ToString()); }
 
 
-            API2.UpdateScoreDataOnStreamAsync(lblWscoreboard.Text,lblYPoint.Text, lblWTurn.Text, lblWSet.Text, "1");
+           
         }
         private void pbY1_Click(object sender, EventArgs e)
         {
             try
             {
-                if (playturn1 == false && colory == false && !m_bRepositionBall && ((!m_bRefereeEnteredPoint && CheckAbleToInputScore()) || rafreeaction || BallTrackAPI.m_nCurrentStep > 0 || timeoutPenalty || sendbackScore))//gamepause == false)
+                if (playturn1 == false && colory == false || timeoutPenalty || sendbackScore)//gamepause == false)
                 {
                     playclicksound();
                     if (!timer3.Enabled)
@@ -1407,6 +1413,7 @@ namespace BilliardWindowsApplication
                         }
 
                     }
+                
                 }
             }
             catch (Exception ex) { MessageBox.Show("exno tgs15" + ex.ToString()); }
@@ -2021,6 +2028,7 @@ namespace BilliardWindowsApplication
                                 m1.extra = 5;
                                 m1.player1 = false;
                                 memory.Add(m1);
+                              
                                 ScoreDatauploadtemp(m1);
                             }
                             else if (rightscore)
@@ -2031,6 +2039,7 @@ namespace BilliardWindowsApplication
                                 m1.replayrecord = m2.replayrecord;
                                 m1.point = m2.point;
                                 memory.Add(m1);
+                              
                                 ScoreDatauploadtemp(m1);
                             }
                             else
@@ -2039,6 +2048,7 @@ namespace BilliardWindowsApplication
                                 {
                                     memory.Add(m1);
                                     ScoreDatauploadtemp(m1);
+                                 
                                 }
                                 if (addm2)
                                 {
@@ -2046,6 +2056,7 @@ namespace BilliardWindowsApplication
                                     ScoreDatauploadtemp(m2);
                                 }
                             }
+                           
 
                         }
 
@@ -3472,6 +3483,18 @@ namespace BilliardWindowsApplication
             scdata.gameid = Int32.Parse(BLL_BilliardWindowsApplication.gamecostdetailsStatic.id);
             API.delScoreData(scdata);
         }
+
+        private void Timer5_Tick(object sender, EventArgs e)
+        {
+            //API2.UpdateScoreDataOnStreamAsync(lblWscoreboard.Text, lblWPoint.Text, lblWTurn.Text, lblWSet.Text, "1");
+            API2.UpdateScoreDataOnStreamAsync(lblYscoreboard.Text, lblYPoint.Text, lblYTurn.Text, lblYSet.Text, "2");
+        }
+
+        private void Timer6_Tick(object sender, EventArgs e)
+        {
+            API2.UpdateScoreDataOnStreamAsync(lblWscoreboard.Text, lblWPoint.Text, lblWTurn.Text, lblWSet.Text, "1");
+        }
+
         public void ScoreDatauploadtemp(memorydetails memo)
         {
             biliardService.ScoreData scdata = new biliardService.ScoreData();

@@ -188,12 +188,51 @@ namespace BilliardWindowsApplication
           
        
             new SoundPlayer(BilliardWindowsApplication.Properties.Resources.button_16).Play();
+            string plName = "White";
+            string ClName = "N/A";
+
+            /*
+            if (BLL_BilliardWindowsApplication.player3.Name == null || BLL_BilliardWindowsApplication.player4.Name == null)
+            {
+                BLL_BilliardWindowsApplication.player3.Name = plName; BLL_BilliardWindowsApplication.player4.Name = plName;
+            }
+
+           if (BLL_BilliardWindowsApplication.player3.ClubName == null || BLL_BilliardWindowsApplication.player4.ClubName == null)
+
+            { BLL_BilliardWindowsApplication.player3.ClubName = "NoCLUB"; BLL_BilliardWindowsApplication.player4.ClubName = "NoCLUB1"; }
+
            
-         
+            else if (BLL_BilliardWindowsApplication.player3.ClubPicture == null) BLL_BilliardWindowsApplication.player3.ClubPicture = "public/Upload/Club/ASD.jpg";
 
-            API2.AddPlayerDetailsOnStreamTestAsync("1111", BLL_BilliardWindowsApplication.player1.Name.ToString(), BLL_BilliardWindowsApplication.player2.Name.ToString(), BLL_BilliardWindowsApplication.player3.Name.ToString(), BLL_BilliardWindowsApplication.player4.Name.ToString(), BLL_BilliardWindowsApplication.player1.ClubName.ToString(), BLL_BilliardWindowsApplication.player2.ClubName.ToString(), BLL_BilliardWindowsApplication.player3.ClubName.ToString(), BLL_BilliardWindowsApplication.player4.ClubName.ToString(),BLL_BilliardWindowsApplication.player1.PlayerPicture.ToString(),BLL_BilliardWindowsApplication.player2.PlayerPicture.ToString(),BLL_BilliardWindowsApplication.player3.PlayerPicture.ToString(),BLL_BilliardWindowsApplication.player4.PlayerPicture.ToString(),BLL_BilliardWindowsApplication.player1.ClubPicture.ToString(),BLL_BilliardWindowsApplication.player2.ClubPicture.ToString(),BLL_BilliardWindowsApplication.player3.ClubPicture.ToString(),BLL_BilliardWindowsApplication.player4.ClubPicture.ToString()) ;
-        
+            else if (BLL_BilliardWindowsApplication.player4.ClubPicture == null) BLL_BilliardWindowsApplication.player4.ClubPicture = "public/Upload/Club/ASD.jpg";
 
+            else if (BLL_BilliardWindowsApplication.player3.PlayerPicture == null) BLL_BilliardWindowsApplication.player3.PlayerPicture = "public/Upload/Club/ASD.jpg";
+
+            else if (BLL_BilliardWindowsApplication.player4.PlayerPicture == null) BLL_BilliardWindowsApplication.player4.PlayerPicture = "public/Upload/Club/ASD.jpg";
+
+            
+*/
+
+            if (BLL_BilliardWindowsApplication.player3.Name == null || BLL_BilliardWindowsApplication.player4 == null)
+            {
+
+                try
+                {
+
+                   // API2.AddPlayerDetailsOnStreamTestAsync("1111", BLL_BilliardWindowsApplication.player1.Name.ToString(), BLL_BilliardWindowsApplication.player2.Name.ToString(), BLL_BilliardWindowsApplication.player3.Name.ToString(), BLL_BilliardWindowsApplication.player4.Name.ToString(), BLL_BilliardWindowsApplication.player1.ClubName.ToString(), BLL_BilliardWindowsApplication.player2.ClubName.ToString(), BLL_BilliardWindowsApplication.player3.ClubName.ToString(), BLL_BilliardWindowsApplication.player4.ClubName.ToString(), BLL_BilliardWindowsApplication.player1.PlayerPicture.ToString(), BLL_BilliardWindowsApplication.player2.PlayerPicture.ToString(), BLL_BilliardWindowsApplication.player3.PlayerPicture.ToString(), BLL_BilliardWindowsApplication.player4.PlayerPicture.ToString(), BLL_BilliardWindowsApplication.player1.ClubPicture.ToString(), BLL_BilliardWindowsApplication.player2.ClubPicture.ToString(), BLL_BilliardWindowsApplication.player3.ClubPicture.ToString(), BLL_BilliardWindowsApplication.player4.ClubPicture.ToString());
+
+                    API2.AddPlayerDetailsOnStreamTest2Async("1111", BLL_BilliardWindowsApplication.player1.Name.ToString(), BLL_BilliardWindowsApplication.player2.Name.ToString(), BLL_BilliardWindowsApplication.player1.ClubName.ToString(), BLL_BilliardWindowsApplication.player2.ClubName.ToString(), BLL_BilliardWindowsApplication.player1.PlayerPicture.ToString(), BLL_BilliardWindowsApplication.player2.PlayerPicture.ToString(), BLL_BilliardWindowsApplication.player1.ClubPicture.ToString(), BLL_BilliardWindowsApplication.player2.ClubPicture.ToString());
+                }
+                catch
+                {
+                    MessageBox.Show("PL3CLB" + BLL_BilliardWindowsApplication.player3.ClubName + "PL4Name:" + BLL_BilliardWindowsApplication.player4.Name);
+                }
+            }
+            else
+            {
+                API2.AddPlayerDetailsOnStreamTestAsync("1111", BLL_BilliardWindowsApplication.player1.Name.ToString(), BLL_BilliardWindowsApplication.player2.Name.ToString(), BLL_BilliardWindowsApplication.player3.Name.ToString(), BLL_BilliardWindowsApplication.player4.Name.ToString(), BLL_BilliardWindowsApplication.player1.ClubName.ToString(), BLL_BilliardWindowsApplication.player2.ClubName.ToString(), BLL_BilliardWindowsApplication.player3.ClubName.ToString(), BLL_BilliardWindowsApplication.player4.ClubName.ToString(), BLL_BilliardWindowsApplication.player1.PlayerPicture.ToString(), BLL_BilliardWindowsApplication.player2.PlayerPicture.ToString(), BLL_BilliardWindowsApplication.player3.PlayerPicture.ToString(), BLL_BilliardWindowsApplication.player4.PlayerPicture.ToString(), BLL_BilliardWindowsApplication.player1.ClubPicture.ToString(), BLL_BilliardWindowsApplication.player2.ClubPicture.ToString(), BLL_BilliardWindowsApplication.player3.ClubPicture.ToString(), BLL_BilliardWindowsApplication.player4.ClubPicture.ToString());
+
+            }
 
             if (((PictureBox)sender).Name == "pbGame")
             {

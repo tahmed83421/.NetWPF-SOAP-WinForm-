@@ -51,15 +51,11 @@
             this.lblPlayer2 = new System.Windows.Forms.Label();
             this.lblPlayer4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pbClub3 = new BilliardWindowsApplication.pictureboxRound();
             this.pbPlayer1 = new System.Windows.Forms.PictureBox();
             this.pbPlayer3 = new System.Windows.Forms.PictureBox();
-            this.pbClub1 = new BilliardWindowsApplication.pictureboxRound();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pbPlayer2 = new System.Windows.Forms.PictureBox();
-            this.pbClub2 = new BilliardWindowsApplication.pictureboxRound();
             this.pbPlayer4 = new System.Windows.Forms.PictureBox();
-            this.pbClub4 = new BilliardWindowsApplication.pictureboxRound();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnWRe = new System.Windows.Forms.PictureBox();
             this.btnWP = new System.Windows.Forms.PictureBox();
@@ -128,20 +124,22 @@
             this.pbRafreeAction = new System.Windows.Forms.PictureBox();
             this.pbBilliardIcon = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.extendedPanel1 = new BilliardWindowsApplication.ExtendedPanel();
-            this.nbprogressbar1 = new BilliardWindowsApplication.nbprogressbar();
             this.pbRefereePresence = new System.Windows.Forms.PictureBox();
             this.lblCost = new System.Windows.Forms.Label();
+            this.timer5 = new System.Windows.Forms.Timer(this.components);
+            this.extendedPanel1 = new BilliardWindowsApplication.ExtendedPanel();
+            this.nbprogressbar1 = new BilliardWindowsApplication.nbprogressbar();
+            this.pbClub2 = new BilliardWindowsApplication.pictureboxRound();
+            this.pbClub3 = new BilliardWindowsApplication.pictureboxRound();
+            this.pbClub1 = new BilliardWindowsApplication.pictureboxRound();
+            this.pbClub4 = new BilliardWindowsApplication.pictureboxRound();
+            this.timer6 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbClub3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbClub1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbClub2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbClub4)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnWRe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnWP)).BeginInit();
@@ -195,6 +193,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbRafreeAction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBilliardIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRefereePresence)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbClub2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbClub3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbClub1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbClub4)).BeginInit();
             this.SuspendLayout();
             // 
             // lblWTurn
@@ -276,7 +278,7 @@
             // 
             // lblWscoreboard
             // 
-            this.lblWscoreboard.Font = new System.Drawing.Font("Bodoni MT Condensed", 350F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWscoreboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 350F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWscoreboard.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblWscoreboard.Location = new System.Drawing.Point(-74, -109);
             this.lblWscoreboard.Name = "lblWscoreboard";
@@ -287,7 +289,7 @@
             // 
             // lblYscoreboard
             // 
-            this.lblYscoreboard.Font = new System.Drawing.Font("Bodoni MT Condensed", 350F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYscoreboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 350F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblYscoreboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(108)))), ((int)(((byte)(10)))));
             this.lblYscoreboard.Location = new System.Drawing.Point(-74, -109);
             this.lblYscoreboard.Name = "lblYscoreboard";
@@ -456,17 +458,6 @@
             this.panel1.TabIndex = 150;
             this.panel1.Click += new System.EventHandler(this.panel5_Click);
             // 
-            // pbClub3
-            // 
-            this.pbClub3.BackColor = System.Drawing.Color.DarkGray;
-            this.pbClub3.Location = new System.Drawing.Point(436, 28);
-            this.pbClub3.Name = "pbClub3";
-            this.pbClub3.Size = new System.Drawing.Size(65, 65);
-            this.pbClub3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbClub3.TabIndex = 147;
-            this.pbClub3.TabStop = false;
-            this.pbClub3.Click += new System.EventHandler(this.panel5_Click);
-            // 
             // pbPlayer1
             // 
             this.pbPlayer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -489,17 +480,6 @@
             this.pbPlayer3.TabIndex = 115;
             this.pbPlayer3.TabStop = false;
             this.pbPlayer3.Click += new System.EventHandler(this.panel5_Click);
-            // 
-            // pbClub1
-            // 
-            this.pbClub1.BackColor = System.Drawing.Color.DarkGray;
-            this.pbClub1.Location = new System.Drawing.Point(131, 28);
-            this.pbClub1.Name = "pbClub1";
-            this.pbClub1.Size = new System.Drawing.Size(65, 65);
-            this.pbClub1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbClub1.TabIndex = 146;
-            this.pbClub1.TabStop = false;
-            this.pbClub1.Click += new System.EventHandler(this.panel5_Click);
             // 
             // panel2
             // 
@@ -528,17 +508,6 @@
             this.pbPlayer2.TabStop = false;
             this.pbPlayer2.Click += new System.EventHandler(this.panel5_Click);
             // 
-            // pbClub2
-            // 
-            this.pbClub2.BackColor = System.Drawing.Color.DarkGray;
-            this.pbClub2.Location = new System.Drawing.Point(12, 28);
-            this.pbClub2.Name = "pbClub2";
-            this.pbClub2.Size = new System.Drawing.Size(65, 65);
-            this.pbClub2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbClub2.TabIndex = 148;
-            this.pbClub2.TabStop = false;
-            this.pbClub2.Click += new System.EventHandler(this.panel5_Click);
-            // 
             // pbPlayer4
             // 
             this.pbPlayer4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -549,17 +518,6 @@
             this.pbPlayer4.TabIndex = 121;
             this.pbPlayer4.TabStop = false;
             this.pbPlayer4.Click += new System.EventHandler(this.panel5_Click);
-            // 
-            // pbClub4
-            // 
-            this.pbClub4.BackColor = System.Drawing.Color.DarkGray;
-            this.pbClub4.Location = new System.Drawing.Point(320, 28);
-            this.pbClub4.Name = "pbClub4";
-            this.pbClub4.Size = new System.Drawing.Size(65, 65);
-            this.pbClub4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbClub4.TabIndex = 149;
-            this.pbClub4.TabStop = false;
-            this.pbClub4.Click += new System.EventHandler(this.panel5_Click);
             // 
             // panel3
             // 
@@ -1605,30 +1563,6 @@
             this.panel5.TabIndex = 163;
             this.panel5.Click += new System.EventHandler(this.panel5_Click);
             // 
-            // extendedPanel1
-            // 
-            this.extendedPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(57)))), ((int)(((byte)(72)))));
-            this.extendedPanel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(57)))), ((int)(((byte)(72)))));
-            this.extendedPanel1.Location = new System.Drawing.Point(0, 0);
-            this.extendedPanel1.Name = "extendedPanel1";
-            this.extendedPanel1.Size = new System.Drawing.Size(0, 0);
-            this.extendedPanel1.TabIndex = 110;
-            // 
-            // nbprogressbar1
-            // 
-            this.nbprogressbar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.nbprogressbar1.BackColor = System.Drawing.Color.Transparent;
-            this.nbprogressbar1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nbprogressbar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F);
-            this.nbprogressbar1.Location = new System.Drawing.Point(862, 226);
-            this.nbprogressbar1.Margin = new System.Windows.Forms.Padding(20, 18, 20, 18);
-            this.nbprogressbar1.Name = "nbprogressbar1";
-            this.nbprogressbar1.Size = new System.Drawing.Size(190, 738);
-            this.nbprogressbar1.TabIndex = 154;
-            this.nbprogressbar1.Visible = false;
-            this.nbprogressbar1.Click += new System.EventHandler(this.nbprogressbar1_Click);
-            // 
             // pbRefereePresence
             // 
             this.pbRefereePresence.BackColor = System.Drawing.Color.Transparent;
@@ -1655,6 +1589,86 @@
             this.lblCost.TabIndex = 166;
             this.lblCost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblCost.Visible = false;
+            // 
+            // timer5
+            // 
+            this.timer5.Enabled = true;
+            this.timer5.Interval = 500;
+            this.timer5.Tick += new System.EventHandler(this.Timer5_Tick);
+            // 
+            // extendedPanel1
+            // 
+            this.extendedPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(57)))), ((int)(((byte)(72)))));
+            this.extendedPanel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(57)))), ((int)(((byte)(72)))));
+            this.extendedPanel1.Location = new System.Drawing.Point(0, 0);
+            this.extendedPanel1.Name = "extendedPanel1";
+            this.extendedPanel1.Size = new System.Drawing.Size(0, 0);
+            this.extendedPanel1.TabIndex = 110;
+            // 
+            // nbprogressbar1
+            // 
+            this.nbprogressbar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.nbprogressbar1.BackColor = System.Drawing.Color.Transparent;
+            this.nbprogressbar1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nbprogressbar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F);
+            this.nbprogressbar1.Location = new System.Drawing.Point(862, 226);
+            this.nbprogressbar1.Margin = new System.Windows.Forms.Padding(20, 18, 20, 18);
+            this.nbprogressbar1.Name = "nbprogressbar1";
+            this.nbprogressbar1.Size = new System.Drawing.Size(190, 738);
+            this.nbprogressbar1.TabIndex = 154;
+            this.nbprogressbar1.Visible = false;
+            this.nbprogressbar1.Click += new System.EventHandler(this.nbprogressbar1_Click);
+            // 
+            // pbClub2
+            // 
+            this.pbClub2.BackColor = System.Drawing.Color.DarkGray;
+            this.pbClub2.Location = new System.Drawing.Point(12, 28);
+            this.pbClub2.Name = "pbClub2";
+            this.pbClub2.Size = new System.Drawing.Size(65, 65);
+            this.pbClub2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbClub2.TabIndex = 148;
+            this.pbClub2.TabStop = false;
+            this.pbClub2.Click += new System.EventHandler(this.panel5_Click);
+            // 
+            // pbClub3
+            // 
+            this.pbClub3.BackColor = System.Drawing.Color.DarkGray;
+            this.pbClub3.Location = new System.Drawing.Point(436, 28);
+            this.pbClub3.Name = "pbClub3";
+            this.pbClub3.Size = new System.Drawing.Size(65, 65);
+            this.pbClub3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbClub3.TabIndex = 147;
+            this.pbClub3.TabStop = false;
+            this.pbClub3.Click += new System.EventHandler(this.panel5_Click);
+            // 
+            // pbClub1
+            // 
+            this.pbClub1.BackColor = System.Drawing.Color.DarkGray;
+            this.pbClub1.Location = new System.Drawing.Point(131, 28);
+            this.pbClub1.Name = "pbClub1";
+            this.pbClub1.Size = new System.Drawing.Size(65, 65);
+            this.pbClub1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbClub1.TabIndex = 146;
+            this.pbClub1.TabStop = false;
+            this.pbClub1.Click += new System.EventHandler(this.panel5_Click);
+            // 
+            // pbClub4
+            // 
+            this.pbClub4.BackColor = System.Drawing.Color.DarkGray;
+            this.pbClub4.Location = new System.Drawing.Point(320, 28);
+            this.pbClub4.Name = "pbClub4";
+            this.pbClub4.Size = new System.Drawing.Size(65, 65);
+            this.pbClub4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbClub4.TabIndex = 149;
+            this.pbClub4.TabStop = false;
+            this.pbClub4.Click += new System.EventHandler(this.panel5_Click);
+            // 
+            // timer6
+            // 
+            this.timer6.Enabled = true;
+            this.timer6.Interval = 1000;
+            this.timer6.Tick += new System.EventHandler(this.Timer6_Tick);
             // 
             // frmGameScore3NEW
             // 
@@ -1694,16 +1708,12 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmGameScore3_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbClub3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbClub1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbClub2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbClub4)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnWRe)).EndInit();
@@ -1759,6 +1769,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbRafreeAction)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBilliardIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRefereePresence)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbClub2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbClub3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbClub1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbClub4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1866,6 +1880,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pbCheckBallColor;
         private System.Windows.Forms.Label lblCost;
-
+        private System.Windows.Forms.Timer timer5;
+        private System.Windows.Forms.Timer timer6;
     }
 }

@@ -39,6 +39,8 @@ namespace BilliardWindowsApplication.SOAPService {
         
         private System.Threading.SendOrPostCallback AddPlayerDetailsOnStreamOperationCompleted;
         
+        private System.Threading.SendOrPostCallback AddPlayerDetailsOnStreamTest2OperationCompleted;
+        
         private System.Threading.SendOrPostCallback AddPlayerDetailsOnStreamTestOperationCompleted;
         
         private System.Threading.SendOrPostCallback UpdateScoreDataOnStreamOperationCompleted;
@@ -181,6 +183,9 @@ namespace BilliardWindowsApplication.SOAPService {
         
         /// <remarks/>
         public event AddPlayerDetailsOnStreamCompletedEventHandler AddPlayerDetailsOnStreamCompleted;
+        
+        /// <remarks/>
+        public event AddPlayerDetailsOnStreamTest2CompletedEventHandler AddPlayerDetailsOnStreamTest2Completed;
         
         /// <remarks/>
         public event AddPlayerDetailsOnStreamTestCompletedEventHandler AddPlayerDetailsOnStreamTestCompleted;
@@ -545,6 +550,51 @@ namespace BilliardWindowsApplication.SOAPService {
             if ((this.AddPlayerDetailsOnStreamCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.AddPlayerDetailsOnStreamCompleted(this, new AddPlayerDetailsOnStreamCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/AddPlayerDetailsOnStreamTest2", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string AddPlayerDetailsOnStreamTest2(string MatchIDD, string Player1Name, string Player2Name, string Club1Name, string Club2Name, string imgPlayer1, string imgPlayer2, string imgClub1, string imgClub2) {
+            object[] results = this.Invoke("AddPlayerDetailsOnStreamTest2", new object[] {
+                        MatchIDD,
+                        Player1Name,
+                        Player2Name,
+                        Club1Name,
+                        Club2Name,
+                        imgPlayer1,
+                        imgPlayer2,
+                        imgClub1,
+                        imgClub2});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void AddPlayerDetailsOnStreamTest2Async(string MatchIDD, string Player1Name, string Player2Name, string Club1Name, string Club2Name, string imgPlayer1, string imgPlayer2, string imgClub1, string imgClub2) {
+            this.AddPlayerDetailsOnStreamTest2Async(MatchIDD, Player1Name, Player2Name, Club1Name, Club2Name, imgPlayer1, imgPlayer2, imgClub1, imgClub2, null);
+        }
+        
+        /// <remarks/>
+        public void AddPlayerDetailsOnStreamTest2Async(string MatchIDD, string Player1Name, string Player2Name, string Club1Name, string Club2Name, string imgPlayer1, string imgPlayer2, string imgClub1, string imgClub2, object userState) {
+            if ((this.AddPlayerDetailsOnStreamTest2OperationCompleted == null)) {
+                this.AddPlayerDetailsOnStreamTest2OperationCompleted = new System.Threading.SendOrPostCallback(this.OnAddPlayerDetailsOnStreamTest2OperationCompleted);
+            }
+            this.InvokeAsync("AddPlayerDetailsOnStreamTest2", new object[] {
+                        MatchIDD,
+                        Player1Name,
+                        Player2Name,
+                        Club1Name,
+                        Club2Name,
+                        imgPlayer1,
+                        imgPlayer2,
+                        imgClub1,
+                        imgClub2}, this.AddPlayerDetailsOnStreamTest2OperationCompleted, userState);
+        }
+        
+        private void OnAddPlayerDetailsOnStreamTest2OperationCompleted(object arg) {
+            if ((this.AddPlayerDetailsOnStreamTest2Completed != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AddPlayerDetailsOnStreamTest2Completed(this, new AddPlayerDetailsOnStreamTest2CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -3676,6 +3726,32 @@ namespace BilliardWindowsApplication.SOAPService {
         private object[] results;
         
         internal AddPlayerDetailsOnStreamCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")]
+    public delegate void AddPlayerDetailsOnStreamTest2CompletedEventHandler(object sender, AddPlayerDetailsOnStreamTest2CompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AddPlayerDetailsOnStreamTest2CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal AddPlayerDetailsOnStreamTest2CompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

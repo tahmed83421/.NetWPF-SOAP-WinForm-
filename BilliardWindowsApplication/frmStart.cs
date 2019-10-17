@@ -292,6 +292,10 @@ namespace BilliardWindowsApplication
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
+            new SoundPlayer(BilliardWindowsApplication.Properties.Resources.button_16).Play();
+            FrmGameSetup frmGameSetup = new FrmGameSetup();
+            this.Hide();
+            frmGameSetup.ShowDialog();
 
         }
     }

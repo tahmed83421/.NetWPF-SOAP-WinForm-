@@ -80,6 +80,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="AddBiliardNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClubNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddBiliardNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddBiliardNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="AddPlayerDetailsOnStream">
         <s:complexType>
           <s:sequence>
@@ -981,6 +995,12 @@
   <wsdl:message name="getPlayerDetailsSoapOut">
     <wsdl:part name="parameters" element="tns:getPlayerDetailsResponse" />
   </wsdl:message>
+  <wsdl:message name="AddBiliardNoSoapIn">
+    <wsdl:part name="parameters" element="tns:AddBiliardNo" />
+  </wsdl:message>
+  <wsdl:message name="AddBiliardNoSoapOut">
+    <wsdl:part name="parameters" element="tns:AddBiliardNoResponse" />
+  </wsdl:message>
   <wsdl:message name="AddPlayerDetailsOnStreamSoapIn">
     <wsdl:part name="parameters" element="tns:AddPlayerDetailsOnStream" />
   </wsdl:message>
@@ -1280,6 +1300,10 @@
       <wsdl:input message="tns:getPlayerDetailsSoapIn" />
       <wsdl:output message="tns:getPlayerDetailsSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="AddBiliardNo">
+      <wsdl:input message="tns:AddBiliardNoSoapIn" />
+      <wsdl:output message="tns:AddBiliardNoSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="AddPlayerDetailsOnStream">
       <wsdl:input message="tns:AddPlayerDetailsOnStreamSoapIn" />
       <wsdl:output message="tns:AddPlayerDetailsOnStreamSoapOut" />
@@ -1500,6 +1524,15 @@
     </wsdl:operation>
     <wsdl:operation name="getPlayerDetails">
       <soap:operation soapAction="https://tempuri.org/getPlayerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBiliardNo">
+      <soap:operation soapAction="https://tempuri.org/AddBiliardNo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1962,6 +1995,15 @@
     </wsdl:operation>
     <wsdl:operation name="getPlayerDetails">
       <soap12:operation soapAction="https://tempuri.org/getPlayerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBiliardNo">
+      <soap12:operation soapAction="https://tempuri.org/AddBiliardNo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

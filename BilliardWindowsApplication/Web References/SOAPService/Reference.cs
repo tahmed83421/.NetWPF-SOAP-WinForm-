@@ -37,6 +37,8 @@ namespace BilliardWindowsApplication.SOAPService {
         
         private System.Threading.SendOrPostCallback getPlayerDetailsOperationCompleted;
         
+        private System.Threading.SendOrPostCallback AddBiliardNoOperationCompleted;
+        
         private System.Threading.SendOrPostCallback AddPlayerDetailsOnStreamOperationCompleted;
         
         private System.Threading.SendOrPostCallback AddPlayerDetailsOnStreamTest2OperationCompleted;
@@ -180,6 +182,9 @@ namespace BilliardWindowsApplication.SOAPService {
         
         /// <remarks/>
         public event getPlayerDetailsCompletedEventHandler getPlayerDetailsCompleted;
+        
+        /// <remarks/>
+        public event AddBiliardNoCompletedEventHandler AddBiliardNoCompleted;
         
         /// <remarks/>
         public event AddPlayerDetailsOnStreamCompletedEventHandler AddPlayerDetailsOnStreamCompleted;
@@ -437,6 +442,35 @@ namespace BilliardWindowsApplication.SOAPService {
             if ((this.getPlayerDetailsCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.getPlayerDetailsCompleted(this, new getPlayerDetailsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tempuri.org/AddBiliardNo", RequestNamespace="https://tempuri.org/", ResponseNamespace="https://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string AddBiliardNo(string ClubNo) {
+            object[] results = this.Invoke("AddBiliardNo", new object[] {
+                        ClubNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void AddBiliardNoAsync(string ClubNo) {
+            this.AddBiliardNoAsync(ClubNo, null);
+        }
+        
+        /// <remarks/>
+        public void AddBiliardNoAsync(string ClubNo, object userState) {
+            if ((this.AddBiliardNoOperationCompleted == null)) {
+                this.AddBiliardNoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAddBiliardNoOperationCompleted);
+            }
+            this.InvokeAsync("AddBiliardNo", new object[] {
+                        ClubNo}, this.AddBiliardNoOperationCompleted, userState);
+        }
+        
+        private void OnAddBiliardNoOperationCompleted(object arg) {
+            if ((this.AddBiliardNoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AddBiliardNoCompleted(this, new AddBiliardNoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -3709,6 +3743,32 @@ namespace BilliardWindowsApplication.SOAPService {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((Details)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")]
+    public delegate void AddBiliardNoCompletedEventHandler(object sender, AddBiliardNoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AddBiliardNoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal AddBiliardNoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
             }
         }
     }

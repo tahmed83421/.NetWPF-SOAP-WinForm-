@@ -60,15 +60,19 @@ namespace BilliardWindowsApplication
         {
             this.Close();
         }
-
+        SOAPService.BilliardScoreboard API2 = new SOAPService.BilliardScoreboard();
         private void label5_Click(object sender, EventArgs e)
         {
+
             API.deletelastgamecostiffree(BLL_BilliardWindowsApplication.gamecostdetailsStatic);
+            API2.AddBiliardNoAsync(textBox1.Text);
+
             new SoundPlayer(BilliardWindowsApplication.Properties.Resources.button_16).Play(); 
             int no = 0;
             try
             {
                 no = Convert.ToInt32(textBox1.Text);
+                
                 BilliardWindowsApplication.Properties.Settings.Default.billiardno = no;
                 BilliardWindowsApplication.Properties.Settings.Default.ClubLogo = clubDetails.ClubLogo;
                 BilliardWindowsApplication.Properties.Settings.Default.Save();
@@ -82,7 +86,9 @@ namespace BilliardWindowsApplication
 
             }
             MessageBox.Show("Setting Saved Successfully." + Environment.NewLine + " Application Restart", "Biliardoprofessionale", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Application.Restart();
+            FrmGameSetup gameSetup = new FrmGameSetup();
+            this.Hide();
+            gameSetup.ShowDialog();
            
         }
     }

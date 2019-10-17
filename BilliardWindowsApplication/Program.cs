@@ -50,7 +50,7 @@ namespace BilliardWindowsApplication
 						BallTrackAPI.mbInitialized = BallTrackAPI.InitSDK(BallTrackAPI.PtrBallPosProc, IntPtr.Zero, IntPtr.Zero, IntPtr.Zero);
 
 					if (BallTrackAPI.m_nInputMethod == 0)
-						Application.Run(new FrmGameSetup());
+						Application.Run(new frmStart());
 					else
 					{
 						//Application.Run(new frmClubWelcome(new biliardService.clubDetails()));

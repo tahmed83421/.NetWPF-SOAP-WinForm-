@@ -191,27 +191,7 @@ namespace BilliardWindowsApplication
             string plName = "White";
             string ClName = "N/A";
 
-            /*
-            if (BLL_BilliardWindowsApplication.player3.Name == null || BLL_BilliardWindowsApplication.player4.Name == null)
-            {
-                BLL_BilliardWindowsApplication.player3.Name = plName; BLL_BilliardWindowsApplication.player4.Name = plName;
-            }
 
-           if (BLL_BilliardWindowsApplication.player3.ClubName == null || BLL_BilliardWindowsApplication.player4.ClubName == null)
-
-            { BLL_BilliardWindowsApplication.player3.ClubName = "NoCLUB"; BLL_BilliardWindowsApplication.player4.ClubName = "NoCLUB1"; }
-
-           
-            else if (BLL_BilliardWindowsApplication.player3.ClubPicture == null) BLL_BilliardWindowsApplication.player3.ClubPicture = "public/Upload/Club/ASD.jpg";
-
-            else if (BLL_BilliardWindowsApplication.player4.ClubPicture == null) BLL_BilliardWindowsApplication.player4.ClubPicture = "public/Upload/Club/ASD.jpg";
-
-            else if (BLL_BilliardWindowsApplication.player3.PlayerPicture == null) BLL_BilliardWindowsApplication.player3.PlayerPicture = "public/Upload/Club/ASD.jpg";
-
-            else if (BLL_BilliardWindowsApplication.player4.PlayerPicture == null) BLL_BilliardWindowsApplication.player4.PlayerPicture = "public/Upload/Club/ASD.jpg";
-
-            
-*/
 
             if (BLL_BilliardWindowsApplication.player3.Name == null || BLL_BilliardWindowsApplication.player4 == null)
             {

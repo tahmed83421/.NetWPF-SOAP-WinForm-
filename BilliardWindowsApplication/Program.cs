@@ -18,9 +18,9 @@ namespace BilliardWindowsApplication
 
 		static void Main()
 		{
-			
-			
-			try
+            Application.Run(new frmStart());
+
+            try
 			{
 				const string appName = "BilliardWindowsApplication";
 				bool createdNew;

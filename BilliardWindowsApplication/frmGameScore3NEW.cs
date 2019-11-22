@@ -12,6 +12,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+// Basic Score + Tracking Line
+
 namespace BilliardWindowsApplication
 {
     public partial class frmGameScore3NEW : Form

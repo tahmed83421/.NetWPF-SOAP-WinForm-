@@ -33,22 +33,22 @@ namespace BilliardWindowsApplication
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            //int no = 0;
-            //try
-            //{
-            //    no = Convert.ToInt32(textBox1.Text);
-            //    BilliardWindowsApplication.Properties.Settings.Default.billiardno = no;
-            //    BilliardWindowsApplication.Properties.Settings.Default.ClubLogo = clubDetails.ClubLogo;
-            //    BilliardWindowsApplication.Properties.Settings.Default.Save();
+            int no = 0;
+            try
+            {
+                no = Convert.ToInt32(textBox1.Text);
+                BilliardWindowsApplication.Properties.Settings.Default.billiardno = no;
+                BilliardWindowsApplication.Properties.Settings.Default.ClubLogo = clubDetails.ClubLogo;
+                BilliardWindowsApplication.Properties.Settings.Default.Save();
 
-            //}
-            //catch
-            //{
-            //    BilliardWindowsApplication.Properties.Settings.Default.billiardno = no;
-            //    BilliardWindowsApplication.Properties.Settings.Default.ClubLogo = "";
-            //    BilliardWindowsApplication.Properties.Settings.Default.Save();
+            }
+            catch
+            {
+                BilliardWindowsApplication.Properties.Settings.Default.billiardno = no;
+                BilliardWindowsApplication.Properties.Settings.Default.ClubLogo = "";
+                BilliardWindowsApplication.Properties.Settings.Default.Save();
 
-            //}
+            }
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)

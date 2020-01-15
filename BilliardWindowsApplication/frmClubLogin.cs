@@ -45,7 +45,8 @@ namespace BilliardWindowsApplication
         {
             try
             {
-                if (BilliardWindowsApplication.Properties.Settings.Default.emailid == textBox1.Text || BilliardWindowsApplication.Properties.Settings.Default.emailid.Trim() == "")
+                //BilliardWindowsApplication.Properties.Settings.Default.emailid == textBox1.Text || BilliardWindowsApplication.Properties.Settings.Default.emailid.Trim() == ""
+                if (textBox1.Text != null)
                 {
                     clubDetails = API.getClubDetails(textBox1.Text.Trim(), textBox2.Text.Trim());
                     if (clubDetails.Status == "Active")
